@@ -5,10 +5,23 @@
 <title>Assistir Filme</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body { margin:0; background:#000; }
-iframe {
-  width:100vw;
+body {
+  margin:0;
+  background:#000;
+}
+
+/* Container responsivo 16:9 */
+.video-container {
+  position:relative;
+  width:100%;
   height:100vh;
+}
+.video-container iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   border:0;
 }
 </style>
@@ -16,11 +29,14 @@ iframe {
 
 <body>
 
-<iframe
-  src="https://iframe.mediadelivery.net/embed/568702/c4742b51-3e88-4387-9882-af3b249ac520?"
-  allowfullscreen
-  allow="autoplay; encrypted-media">
-</iframe>
+<div class="video-container">
+  <iframe
+    src="https://iframe.mediadelivery.net/embed/568702/c4742b51-3e88-4387-9882-af3b249ac520?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+    loading="lazy"
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
 </body>
 </html>
